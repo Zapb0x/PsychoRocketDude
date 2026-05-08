@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5
 --- !u!1 &727778481376510000
 GameObject:
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5
 --- !u!1 &2680412547590169491
 GameObject:
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5
 --- !u!1 &3146648118354072405
 GameObject:
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5
 --- !u!1 &3691446102849986545
 GameObject:
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 6550356573599991958}
   m_Layer: 0
   m_Name: RangedEnemyHolder
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -720,7 +720,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3691446102849986545}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.28, y: -3.89, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5
 --- !u!1 &5497424260520244993
 GameObject:
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5
 --- !u!1 &5654346726548230276
 GameObject:
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5
 --- !u!1 &6303711053666872007
 GameObject:
@@ -1264,9 +1264,9 @@ GameObject:
   - component: {fileID: 1148678394070777158}
   - component: {fileID: 4731700947516738699}
   - component: {fileID: 4035922104820385934}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RangedEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1328,7 +1328,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 54027101, guid: ecfce387b6b06214299e2e9f7aeeb8b6, type: 3}
   m_Color: {r: 0, g: 0.2830189, b: 0.24118128, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1371,18 +1371,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05277586, y: -0.26058018}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1055517, y: 1.5211604}
   m_EdgeRadius: 0
 --- !u!114 &4731700947516738699
 MonoBehaviour:
@@ -1401,6 +1401,9 @@ MonoBehaviour:
   numberOfflashes: 0
   components:
   - {fileID: 4035922104820385934}
+  deathSound: {fileID: 8300000, guid: 39d95322e08d84fc88a217e689779f38, type: 3}
+  hurtSound: {fileID: 8300000, guid: 689238b1541dd464ba338a2dc4d495f9, type: 3}
+  enemySprite: {fileID: 5073888777648442029}
 --- !u!114 &4035922104820385934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1428,11 +1431,12 @@ MonoBehaviour:
   - {fileID: 164626794756936478}
   - {fileID: 3146648118354072405}
   - {fileID: 2680412547590169491}
-  colliderDistance: 0.67
+  colliderDistance: 0.74
   boxCollider: {fileID: 1148678394070777158}
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  EnemyGunshotSound: {fileID: 8300000, guid: 5b1f83bbc554f4367aed82ebf7279fac, type: 3}
 --- !u!1 &7518309502444705620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,8 +1466,8 @@ Transform:
   m_GameObject: {fileID: 7518309502444705620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.31, y: 0.12, z: 0.2994225}
-  m_LocalScale: {x: 0.836, y: 0.19169948, z: 1}
+  m_LocalPosition: {x: 1.065, y: -0.208, z: 0.2994225}
+  m_LocalScale: {x: 0.24074186, y: 0.2957444, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8802155753886353337}
@@ -1509,7 +1513,7 @@ SpriteRenderer:
   m_SortingLayerID: -1568499723
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -2126872391, guid: b31a048a59d4a974f8357b8c10f1065a, type: 3}
   m_Color: {r: 1, g: 0, b: 0.5004897, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1552,18 +1556,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0000004172325, y: 0.11287451}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.0630846, y: 0.774251}
   m_EdgeRadius: 0
 --- !u!50 &7293212625053578353
 Rigidbody2D:
@@ -1605,7 +1609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5
 --- !u!1 &7750362603438918226
 GameObject:
@@ -1779,7 +1783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5
 --- !u!1 &7896341960164183898
 GameObject:
@@ -1861,7 +1865,7 @@ Transform:
   m_GameObject: {fileID: 8378948522701709919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.26, y: 0, z: 0}
+  m_LocalPosition: {x: -0.907, y: -0.178, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2039,5 +2043,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 5
+  speed: -5
   resetTime: 5

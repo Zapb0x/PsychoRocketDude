@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+
     [Header("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
@@ -18,6 +18,12 @@ public class Health : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Behaviour[] components;
 
+    [Header("Death Sound")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hurtSound;
+
+    public SpriteRenderer enemySprite;
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -30,6 +36,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             StartCoroutine(Invunerability());
+            SoundManager.instance.PlaySound(hurtSound);
         }
         else
         {
@@ -38,8 +45,10 @@ public class Health : MonoBehaviour
                 //Deactivate all component classes
                 foreach (Behaviour component in components)
                     component.enabled = false;
+                enemySprite.enabled = false;
 
                 dead = true;
+                SoundManager.instance.PlaySound(deathSound);
             }
         }
     }

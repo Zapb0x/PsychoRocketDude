@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] Rockets;
+    [SerializeField] private AudioClip gunshotSound;
+
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
@@ -26,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        SoundManager.instance.PlaySound(gunshotSound);
         cooldownTimer = 0;
 
         Rockets[FindRocket()].transform.position = firePoint.position;

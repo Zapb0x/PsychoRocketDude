@@ -25,6 +25,12 @@ public class RangedEnemy : MonoBehaviour
     [SerializeField] private AudioClip EnemyGunshotSound;
 
     private Health playerHealth;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {

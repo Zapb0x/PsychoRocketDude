@@ -23,10 +23,12 @@ public class Health : MonoBehaviour
     [SerializeField] private AudioClip hurtSound;
 
     public SpriteRenderer enemySprite;
+    private Animator anim;
 
     private void Awake()
     {
         currentHealth = startingHealth;
+        anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
     }
     public void TakeDamage(float _damage)
@@ -47,8 +49,10 @@ public class Health : MonoBehaviour
                     component.enabled = false;
                 enemySprite.enabled = false;
 
-                dead = true;
+                anim.SetTrigger("EnemyDeath");
                 SoundManager.instance.PlaySound(deathSound);
+
+                dead = true;
             }
         }
     }

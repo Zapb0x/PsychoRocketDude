@@ -5,16 +5,25 @@ using UnityEngine.UI;
 
 public class UITrigger : MonoBehaviour
 {
-    private BoxCollider2D UIAppear;
+    public GameObject uiToDisable;
+    public GameObject uiToEnable;
 
-    [Header("Music")]
-    [SerializeField] private AudioClip Ambience;
+    public AudioSource musicSource;
+    public AudioClip Ambience;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            SoundManager.instance.PlaySound(Ambience);
+            if (uiToDisable != null) uiToDisable.SetActive(false);
+            if (uiToEnable != null) uiToEnable.SetActive(true);
+
+            if (musicSource != null && Ambience != null)
+            {
+                musicSource.Stop();
+                musicSource.clip = Ambience;
+                musicSource.Play();
+            }
         }
     }
 }

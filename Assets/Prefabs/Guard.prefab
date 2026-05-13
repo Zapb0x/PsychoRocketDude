@@ -44,6 +44,14 @@ PrefabInstance:
       propertyPath: colliderDistance
       value: 0.82
       objectReference: {fileID: 0}
+    - target: {fileID: 4731700947516738699, guid: da6b9fb711d0901448570c89c435c1f2, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1cd9fbc4bb2c19749aa2e61afd72aaaa, type: 3}
+    - target: {fileID: 4731700947516738699, guid: da6b9fb711d0901448570c89c435c1f2, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: df7b0527bedef454c888055c076048ed, type: 3}
     - target: {fileID: 5073888777648442029, guid: da6b9fb711d0901448570c89c435c1f2, type: 3}
       propertyPath: m_Sprite
       value: 

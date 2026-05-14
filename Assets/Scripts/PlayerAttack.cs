@@ -20,14 +20,16 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown)
+        {
+            SoundManager.instance.PlaySound(gunshotSound);
             Attack();
+        }
 
         cooldownTimer += Time.deltaTime;
     }
 
     private void Attack()
     {
-        SoundManager.instance.PlaySound(gunshotSound);
         cooldownTimer = 0;
 
         Rockets[FindRocket()].transform.position = firePoint.position;

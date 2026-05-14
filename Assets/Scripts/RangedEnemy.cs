@@ -27,9 +27,12 @@ public class RangedEnemy : MonoBehaviour
     private Health playerHealth;
     private Animator anim;
 
+    private EnemyPatrol enemyPatrol;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        enemyPatrol = GetComponent<EnemyPatrol>();
     }
 
     private void Update()
@@ -45,6 +48,9 @@ public class RangedEnemy : MonoBehaviour
                 RangedAttack();
             }
         }
+
+        if (enemyPatrol != null)
+            enemyPatrol.enabled = !PlayerInSight();
     }
 
     private void RangedAttack()

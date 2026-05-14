@@ -22974,7 +22974,7 @@ MonoBehaviour:
   - {fileID: 2096606361}
   deathSound: {fileID: 8300000, guid: b36f950097f884c29af261cf227945b3, type: 3}
   hurtSound: {fileID: 8300000, guid: 4c43a978597fc4e4f81ae2bbacbe7990, type: 3}
-  enemySprite: {fileID: 2096606359}
+  CharacterSprite: {fileID: 2096606359}
 --- !u!95 &2096606363
 Animator:
   serializedVersion: 5

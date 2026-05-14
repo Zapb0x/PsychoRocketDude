@@ -1404,7 +1404,7 @@ MonoBehaviour:
   - {fileID: 4035922104820385934}
   deathSound: {fileID: 8300000, guid: 39d95322e08d84fc88a217e689779f38, type: 3}
   hurtSound: {fileID: 8300000, guid: 689238b1541dd464ba338a2dc4d495f9, type: 3}
-  enemySprite: {fileID: 5073888777648442029}
+  CharacterSprite: {fileID: 5073888777648442029}
 --- !u!114 &4035922104820385934
 MonoBehaviour:
   m_ObjectHideFlags: 0

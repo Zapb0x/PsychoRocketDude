@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-
     [Header("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
@@ -22,13 +21,11 @@ public class Health : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip hurtSound;
 
-    public SpriteRenderer enemySprite;
-    private Animator anim;
+    public SpriteRenderer CharacterSprite;
 
     private void Awake()
     {
         currentHealth = startingHealth;
-        anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
     }
     public void TakeDamage(float _damage)
@@ -47,9 +44,8 @@ public class Health : MonoBehaviour
                 //Deactivate all component classes
                 foreach (Behaviour component in components)
                     component.enabled = false;
-                enemySprite.enabled = false;
+                CharacterSprite.enabled = false;
 
-                anim.SetTrigger("EnemyDeath");
                 SoundManager.instance.PlaySound(deathSound);
 
                 dead = true;
